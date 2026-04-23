@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dinner Date Approval Request</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      width: 320px;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 16px;
+      margin: 8px;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .yes {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    .yes:hover {
+      background-color: #e63950;
+    }
+
+    .option {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Ms. Dua, will you go out on a dinner date with me? ❤️</h1>
+
+  <button class="yes" onclick="goToWhatsApp('Yes 😍')">Yes 😍</button>
+
+  <button class="option" onmouseover="moveBtn(this)" onclick="goToWhatsApp('No 😢')">No 😢</button>
+  <button class="option" onmouseover="moveBtn(this)" onclick="goToWhatsApp('Will See 🤔')">Will See 🤔</button>
+  <button class="option" onmouseover="moveBtn(this)" onclick="goToWhatsApp('Maybe 🙂')">Maybe 🙂</button>
+  <button class="option" onmouseover="moveBtn(this)" onclick="goToWhatsApp('Not Sure 😅')">Not Sure 😅</button>
+</div>
+
+<script>
+function goToWhatsApp(answer) {
+  window.location.href =
+    "https://wa.me/923322202817?text=My%20answer%20is:%20" +
+    encodeURIComponent(answer);
+}
+
+function moveBtn(btn) {
+  btn.style.position = "absolute";
+  btn.style.top = Math.random() * 300 + "px";
+  btn.style.left = Math.random() * 300 + "px";
+}
+</script>
+
+</body>
+</html>
